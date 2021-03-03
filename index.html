@@ -1,0 +1,832 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <title>A sneak preview into the future of geomechanics</title>
+      <link rel="stylesheet" href="css/reveal.css">
+      <link rel="stylesheet" href="css/theme/burntorange.css">
+      <!-- Theme used for syntax highlighting of code -->
+      <link rel="stylesheet" href="lib/css/zenburn.css">
+      <!-- Printing and PDF exports -->
+      <script>
+         var link = document.createElement('link');
+         link.rel = 'stylesheet';
+         link.type = 'text/css';
+         link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+         document.getElementsByTagName('head')[0].appendChild(link);
+      </script>
+      <!-- MathJax -->
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/x-mathjax-config">
+         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <!-- Script for Video play back on Slide for multiple videos-->
+      <script src = "js/video.js"></script>
+   </head>
+   <body>
+      <div class="reveal">
+         <div class="slides">
+            <!-- Section -->
+            <section data-background="images/themes/ut.jpg" data-background-size="100%">
+              <h1>A sneak preview into the future of geomechanics</h1>
+              <br/>
+              <img style="border:0;" src="images/themes/ut.png" width="40%">
+              <br/>
+              <h2 style = "color: #ffffff">
+                Krishna Kumar, <a style = "color: #ffffff" href="mailto:krishnak@utexas.edu">krishnak@utexas.edu</a>
+              </h2>
+              <br/>
+              <h4>4th March 2021</h4>
+            </section>
+            <section>
+               <!-- Historic buildings -->
+               <section>
+                  <h2>Civil Engineering: From the past to the present</h2>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/buildings.png" width="100%">
+               </section>
+               <!-- Tacoma Narrow bridge collapse -->
+              <section>
+                <h2>Tacoma narrow bridge collapse</h2>
+                  <video  width="80%"  controls loop>
+                    <source src="media/tacoma.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                <p>
+                  <a href="https://www.youtube.com/watch?v=nFzu6CNtqec">https://www.youtube.com/watch?v=nFzu6CNtqec
+                  </a>
+                </p>
+              </section>
+
+              <!-- Millenium bridge -->
+              <section>
+                <h2>Millenium bridge</h2>
+                  <video  width="90%"  controls loop muted>
+                    <source src="media/millenium-bridge.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                  </video>
+                <p>
+                  <a href="https://www.youtube.com/watch?v=eAXVa__XWZ8">https://www.youtube.com/watch?v=eAXVa__XWZ8
+                  </a>
+                </p>
+              </section>
+              
+              <!-- London Bridge Station -->
+              <section>
+                <h2>London Bridge Station bridge</h2>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/lbs.png" width="80%">
+              </section>
+
+              <!-- Complex civil infrastructure -->
+              <section>
+                <h3>Victoria station upgrade</h3>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/victoria-station.png" width="80%">
+              </section>
+
+              <!-- Fiber Optics -->
+              <section data-background="images/fiber-optics.jpg" data-background-size="80%">
+                <h2 style="color: yellow;">Structural monitoring</h2>
+              </section>
+
+              <!-- Laser -->
+              <section>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/lunar-reflectors.jpg" width="65%">
+              </section>
+
+              <section>
+                <h3>Post Office tunnel</h3>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/monitoring-tunnel-photogrammetry.jpeg" width="65%">
+              </section>
+
+
+              <!-- Fiber Optics -->
+              <section>
+                <h3>Distributed Brillouin Sensing</h3>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/fiberoptics-theory.png" width="80%">
+              </section>
+
+              <!-- Monitoring piles -->
+              <section>
+                <h3>Monitoring of piles</h3>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/monitoring-piles.png" width="80%">
+              </section>
+
+              <!-- Monitoring tunnels -->
+              <section>
+                <h3>Monitoring of tunnels</h3>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/monitoring-tunnels.png" width="80%">
+              </section>
+
+              <!-- Monitoring arches -->
+              <section>
+                <h3>Monitoring of arches</h3>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/monitoring-arches.png" width="80%">
+              </section>
+
+              <!-- Monitoring arches -->
+              <section>
+                <h3>Monitoring of shaft</h3>
+                <img style = "border:0; box-shadow: 0 0 0px;" src="images/monitoring-shaft.png" width="80%">
+              </section>
+
+              <section data-background-video="media/tunneling.webm" data-background-color="#000000"></section>
+
+              <!-- People movement -->
+              <section data-background-video="media/people-movement.webm" data-background-color="#000000">
+                <aside class="notes">
+                  An interesting aspect of this installation was that, we installed the sensors in Construction Stage 1B where the neighbouring platforms were not operational and a hoarding separated the construction work from the public. However, recently, the hoarding was removed back as Construction Stage CC started. This resulted in some changes in people flows in the station. As a next step, we’d like to simulate these changes using CSIC researcher Vassilis Zachariadis’ microsimulation tool. This tool can tell us when/where a congestion would work and can be used in the long run to optimize temporary station layouts.
+                </aside>
+              </section>
+
+              <!-- ABM -->
+              <section>
+                <h2>Agent Based Modelling of cities</h2>
+                <video  width="125%" controls loop>
+                  <source src="media/abm.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Soga et al., (2017)</p>
+              </section>
+              <section>
+                <h2>Agent Based Modelling of Tokyo</h2>
+                <video  width="125%" controls loop>
+                  <source src="media/tokyo-abm.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Zhao et al., (2019)</p>
+              </section>
+              <!-- HSV2 -->
+              <section>
+                <h2>Network analysis of Herpes Simplex Virus (HSV2)</h2>
+                <div style="float: left; width: 50%;">
+                  <figure>
+                    <img style = "border:0;" src="images/chimpanzee-rainforest.png" width="100%">
+                    <figcaption>
+                      Fossil data
+                    </figcaption>
+                  </figure>
+                </div>
+                <div style="float: right; width: 50%;">
+                  <figure>
+                    <img style = "border:0;" src="images/dag-it.png" width="90%">
+                    <figcaption>
+                      Transmission route
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="block" style="clear: both; width: 100%">
+                  <i>Paranthropus boisei</i> is the intermediary species that gave humans herpes! <br/!> (Underdown et al., 2017)
+                </div>
+              </section>
+              <!-- Boisei -->
+              <section>
+                <h2>The usual suspects</h2>
+                <figure>
+                  <img style = "border:0;" src="images/boisei.png" width="100%">
+                </figure>
+              </section>
+              <!-- ABM -->
+              <section>
+                <h2>Cellular Automata modelling road network degradation</h2>
+                <video  width="75%" controls loop>
+                  <source src="media/ca.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+              </section>
+              <!-- ABM -->
+              <section>
+                <h2>Cellular Automata modelling of disease</h2>
+                <video  width="125%" controls loop>
+                  <source src="media/ca-hsv2.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+              </section>
+            </section>
+            <!-- Numerical methods -->
+            <section>
+              <!-- Discrete Element Method -->
+              <section>
+                <h2>Behaviour of soil under different conditions</h2>
+                <div style="float: left; width: 100%;">
+	          <span style="float: left; width: 100%; text-align: center;">
+	            <img style = "border:0; box-shadow: 0 0 0px;" src="images/kings-college.jpg" width="55%">
+	            <figcaption style="text-align:center;font-size: 60%;">King's College, Cambridge<br/>
+	            </figcaption>
+  	          </span>
+	          <div style="float: left; width: 100%;">
+	            <span style="float: left; width: 45%; text-align: center;">
+	              <img style = "border:0; box-shadow: 0 0 0px;" src="images/sandhand.jpg" width="80%">
+	              <figcaption style="text-align:center;font-size: 60%;">Soil flow
+	              </figcaption>
+  	            </span>
+  	            <span style="float: right; width: 45%; text-align: center;">
+	              <img style = "border:0; box-shadow: 0 0 0px;" src="images/sandcastle.jpg" width="90%">
+	              <figcaption style="text-align:center;font-size: 60%;">Sand castle
+	              </figcaption>
+  	            </span>
+                </div>
+              </section>
+              <!--Everyone is a geotechnical engineer!-->
+              <section>
+                <h2>Everyone is a geotechnical engineer!</h2>
+                <div style="float: left; width: 50%;">
+                  <figure>
+                    <img style = "border:0; box-shadow: 0 0 0px;" src="images/kids-sandcastle.jpg" width="100%">
+                  </figure>
+                </div>
+                <div class="fragment" style="float: right; width: 50%; text-align: left;">
+                  <figure>
+                    <img style = "border:0; box-shadow: 0 0 0px;" src="images/dog-digging.jpg" width="84%">
+                  </figure>
+                </div>
+              </section>
+
+              <!--Sand castle -->
+              <section>
+                <h2>Where to build the perfect sand castle?</h2>
+                <div class="fragment" style="float: left; width: 75%;">
+                  <figure>
+                    <img style = "border:0; box-shadow: 0 0 0px;" src="images/beach.png" width="100%">
+                  </figure>
+                </div>
+                <div class="fragment" style="float: right; width: 20%;">
+                  <div class="fragment">
+                    <figure>
+                      <img style = "border:0; box-shadow: 0 0 0px;" src="images/collapsed-sandcastle.jpg" width="80%">
+                      <figcaption><span class="red">A: Too wet</span></figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="fragment">
+                    <figure>
+                      <img style = "border:0; box-shadow: 0 0 0px;" src="images/granular-pile.png" width="80%">
+                      <figcaption><span class="red">C: Too dry</span></figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="fragment">
+                    <figure>
+                      <img style = "border:0; box-shadow: 0 0 0px;" src="images/sandcastle.jpg" width="80%">
+                      <figcaption><span class="green">B: Perfect</span></figcaption>
+                    </figure>
+                  </div>
+
+                </div>
+              </section>
+              
+              <!--Sand castle -->
+              <section>
+                <h2>Building the perfect sand castle</h2>
+                <figure>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/sandcastle-meniscus.png" width="65%">
+                </figure>
+              </section>
+
+              <!--Sand castle -->
+              <section>
+                <h2>Can we build an underwater sand castle?</h2>
+                  <div class="fragment">
+                    <figure>
+                      <img style = "border:0; box-shadow: 0 0 0px;" src="images/underwater-sandcastles.png" width="65%">
+                    </figure>
+                    <p>Using hydrophobic sand: The force between beads remain constant, but the effective weight of the sandcastle is reduced by a factor of 3.
+                  </div>
+              </section>
+
+              <!-- LBM Unsaturated -->
+              <section>
+                <h2>LBM modeling of unsaturated soil behavior</h2>
+                <video  width="70%"  controls loop muted>
+                  <source src="media/lbm-unsaturated.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+              </section>
+
+              <section>
+                <h2>LBM modeling of unsaturated soil behavior</h2>
+                <div style="float: left; width: 30%;">
+                  <figure>
+                    <img style = "border:0;" src="images/capillary-structure.png" width="70%">
+                  </figure>
+                </div>
+                <div style="float: right; width: 70%;">
+                  <figure>
+                    <img style = "border:0;" src="images/saturation-suction.png" width="85%">
+                  </figure>
+                </div>
+              </section>
+
+
+              <!--Dilation-->
+              <section>
+                <h2>What happens when you squeeze the balloons?</h2>
+                <figure>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/dilatancy.png" width="25%">
+                </figure>
+              </section>
+              
+              <section>
+                <h2>What happens when you squeeze: soil vs water?</h2>
+                  <video  width="90%"  controls loop muted>
+                      <source src="media/dilatancy.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                  </video>
+              </section>
+
+              <section>
+                <h2>Shear-induced dilation</h2>
+                <figure>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/shear-dilation.png" width="80%">
+                </figure>
+              </section>
+
+              <section>
+                <h2>Saw-tooth model</h2>
+                <figure>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/friction-sawblade.png" width="50%">
+                </figure>
+              </section>
+
+              <!--Visualising stresses-->
+              <section>
+                <h2>Visualising effective stresses in soil</h2>
+                <figure>
+                  <video width="70%"  controls loop muted>
+                    <source src="media/simple-shear.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                  <figcaption>source: simple shear in granular materials
+                    <br/> <a href="https://www.youtube.com/watch?v=Z6rvdkI4T8I">https://www.youtube.com/watch?v=Z6rvdkI4T8I</a></figcaption>
+                </figure>
+              </section>
+
+              <section>
+                <h2>Realistic dilation model model</h2>
+                <figure>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/dilation.png" width="80%">
+                </figure>
+              </section>
+
+              <!--Visualising stresses-->
+              <section>
+                <h2>Granular trip</h2>
+                <figure>
+                  <video width="70%"  controls loop muted>
+                    <source src="media/granular-trip.webm" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                  <figcaption>source: Jacques Desrues, Cino Viggiani, Edward Andò and Stephen Hall. (2013) Granular Trip: Flying through the pore space of a sand specimen.
+                    <br/> <a href="https://www.youtube.com/watch?v=sjjq5z0qLlI">https://www.youtube.com/watch?v=sjjq5z0qLlI</a></figcaption>
+                </figure>
+              </section>
+
+
+              <!--Dog digging a pit-->
+              <section>
+                <h2>Why do dogs dig shallow pits?</h2>
+                <figure>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/dog-digging.jpg" width="60%">
+                </figure>
+              </section>
+            </section>
+            
+            <section>
+              <!-- Modelling soil -->
+              <section>
+                <h2>Scales in modelling soil</h2>
+                <figure>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/soil-scale.png" width="100%">
+                </figure>
+              </section>
+
+              <!-- Discrete Element Method -->
+              <section>
+                <h2>Discrete Element Method</h2>
+                <div style="float: left; width: 43%;">
+                  <video  width="90%"  controls loop muted>
+                      <source src="media/tennis-balls.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div style="float: right; width: 57%;">
+                  <video  width="90%"  controls loop muted>
+                    <source src="media/bouncing-balls.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div style="clear: both">
+                  <p>Grain-scale simulation of soil</p>
+                </div>
+              </section>
+              <!-- MPM -->
+              <section>
+                <h2>Applications of DEM</h2>
+                  <video  width="90%"  controls loop muted>
+                    <source src="media/dem.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                  </video>
+                <p>
+                  <a href="https://www.youtube.com/watch?v=Qf-5d9KgcqQ">Satori Tsuzuki et al (2016)
+                  </a>
+                </p>
+              </section>            
+
+              <!-- LBM MRT -->
+              <section>
+                <h2> Lattice Boltzmann - MRT </h2>
+                <div style="float: left; width: 47%;">
+                  <figure>
+                    <img style = "border:0;" src="images/lbm_fluid.png" width ="80%">
+                    <figcaption style = "font-size: 80%; text-align: center; "> Real Fluid vs LBM Idealisation </figcaption>
+                  </figure>
+                </div>
+                <div style="float: right; width: 47%;">
+                  <figure>
+                    <img style = "border:0;" src="images/d2q9.png" width = "80%">
+                    <figcaption style = "font-size: 80%; text-align: center;">
+                      LBM D2Q9 Model
+                    </figcaption>
+                  </figure>
+                </div>
+                <br/>
+                <div style="clear: both; width: 85%">
+                  \[f_{i}(x + dx, t +\Delta t) - f_{i}(x, t) = -S_{\alpha i}(
+                  f_{i}(x, t) - f_{i} ^ {eq}(x, t))\]
+                </div>
+                <ul>
+                  <li>$S_{\alpha i}$ is the collisional matrix.</li>
+                  <li>Probability density of finding a particle : $f(x,\varepsilon, t) $,
+                    where, x is position, $\varepsilon$ is velocity, and t is time.
+                  </li>
+                </ul>
+                <div style="float: left; width: 47%;">
+                  <figure>
+                    <img style = "border:0;" src = "images/stream.png" width = "80%">
+                    <figcaption style = "font-size: 80%; text-align: center;">
+                      Streaming
+                    </figcaption>
+                  </figure>
+                </div>
+                <div style="float: right; width: 47%;">
+                  <figure>
+                    <img style = "border:0;" src = "images/collision.png" width = "80%">
+                    <figcaption style = "font-size: 80%; text-align: center;">
+                      Collision
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+              <!-- LBM-DEM fluid solid coupling -->
+              <section>
+                <h3>LBM-DEM fluid-solid coupling </h3>
+                <div style="float: left; width: 70%;">
+                  <figure>
+                    <img style = "border:0;" src="images/lbm-dem.png" width = "70%">
+                  </figure>
+                  <div class = "block">
+                    $$\Delta t_{s}=\frac{\Delta t}{\mathit{n}_{s}} \qquad (\mathit{n}_{s}=[\Delta t/ \Delta t_{D}]+1) $$
+                  </div>
+                  <ul>
+                    <li>At every fluid iteration, $\mathit{n}_{s}$
+                      sub-steps of DEM iterations are performed using the time step $\Delta t_{s}$.
+                    </li>
+                    <li>The hydrodynamic force is unchanged during the sub-cycling. </li>
+                  </ul>
+                </div>
+                <div style="float: right; width: 30%;">
+                  <video id="Kissing" width="50%" controls loop>
+                    <source src="media/tumble.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                  </video>
+                </div>
+              </section>
+
+              <!--LBM DEM 10,000 particles-->
+              <section>
+                <h2>LBM - DEM a = 0.8 & 10,000 particles</h2>
+                <br/>
+                <video  width="100%" controls loop muted>
+                  <source src="media/a08_r095_7000.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <br/>
+                <ul>
+                  <li> LBM Nodes = 50 Million : DEM grains = 10000 discs </li>
+                  <li> Run-time = 4 hours </li>
+                  <li> Speedup = 125x on a Pascal P100</li>
+              </section>
+
+              <!-- Effect of slope -->
+               <section>
+                  <h2>Collapse on an inclined plane</h2>
+                  <br/>
+                  <video  width="100%" controls loop muted>
+                     <source src="media/a6_slope5.webm" type="video/webm">
+                     Your browser does not support the video tag.
+                  </video>
+                  <br/>
+                  <br/>aspect ratio 'a' of 6 on a slope of 5*<br />
+               </section>
+              <!-- Fluid structure interaction -->
+              <section>
+                <h2>Fluid structure interaction</h2>
+                  <video  width="90%" controls loop muted>
+                    <source src="media/fluid-ssi.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                  </video>
+                <p>
+                  <a href="https://www.youtube.com/watch?v=Qf-5d9KgcqQ">Satori Tsuzuki et al (2016)
+                  </a>
+                </p>
+              </section>
+              
+               <!-- Mesh based vs Mesh-free approach -->
+               <section>
+                 <h2>Mesh-based vs Mesh-free techniques</h2>
+                 <figure>
+                   <img style = "border:0;" src="images/continuum_approaches.png" width="100%">
+                 </figure>
+               </section>
+               <!-- Material Point Method -->
+               <section>
+                 <h2>Material Point Method</h2>
+                 <div style="float: left; width: 30%;">
+                   <figure>
+                     <img style = "border:0;" src="images/mpm_equation.png" width="100%">
+                   </figure>
+                 </div>
+                 <div style="float: left; width: 70%;">
+                   <figure>
+                     <img style = "border:0;" src="images/mpm_algorithm.png" width="100%">
+                   </figure>
+                 </div>
+               </section>
+
+               <!-- MPM -->
+              <section>
+                <h2>Disney's Frozen: Snow simulation</h2>
+                <video  width="80%"  controls loop muted>
+                  <source src="media/disney-mpm-snow.mp4" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <p>
+                  <a href="https://www.youtube.com/watch?v=O0kyDKu8K-k">Sungkwan Park et al (2014)
+                  </a>
+                </p>
+              </section>
+
+              <section>
+                <h2>Oso landslide (2014)</h2>
+                <figure>
+                  <img style = "border:0;" src="images/oso_landslide.png" width="100%">
+                  <figcaption>8 million cubic meters of glacial deposits and water-filled debris material transported
+                    to a distance of 1 km (Haugerud., 2014).</figcaption>
+                </figure>
+              </section>
+
+              <!-- Oso landslides -->
+               <section>
+                  <h2>Oso landslide (2014)</h2>
+                  <figure>
+                    <img style = "border:0;" src="images/oso-topography-2014.png" width="90%">
+                  </figure>
+               </section>
+              
+              <!-- Oso landslides -->
+               <section>
+                  <h2>Think hard, and go watch Disney movies!</h2>
+                  <figure>
+                    <img style = "border:0;" src="images/cinema.png" width="90%">
+                  </figure>
+               </section>
+
+              <section>
+                <h2>Oso landslide simulation</h2>
+                <video  width="80%"  controls loop muted>
+                  <source src="media/oso-landslide.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+              </section>
+
+              <!-- MPM Simulation -->
+               <section>
+                 <h2>MPM soil-water interaction</h2>
+                 <video  width="75%"  controls loop muted>
+                   <source src="media/sand-water-dam.webm" type="video/webm">
+                     Your browser does not support the video tag.
+                 </video>
+               </section>
+
+               <section>
+                <h2>MPM submarine landslide</h2>
+                <video  width="75%"  controls loop muted>
+                  <source src="media/mpm-submarine-landslide.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Depth-averaged Material Point Method (Taka et al., 2012)</p>
+              </section>
+
+               <!-- MPM rainfaill induced landslide -->
+               <section>
+                 <h2>MPM rainfall induced landslide</h2>
+                 <video  width="75%"  controls loop muted>
+                   <source src="media/rainfall-landslide.webm" type="video/webm">
+                     Your browser does not support the video tag.
+                 </video>
+               </section>
+            </section>
+
+            <!--Aritificial Intelligence! -->
+            <section>
+              <section>
+                <h2>Dynamic testing!</h2>
+                <figure>
+                    <img style = "border:0;" src="images/t-rex.png" width="100%">
+                  <figcaption>Stokoe et al. (2020)</figcaption>
+                </figure>
+              </section>
+
+              <section>
+                <h2>Multichannel Analysis of Surface Waves</h2>
+                <figure>
+                  <img style = "border:0;" src="images/masw.png" width="100%">
+                  <figcaption></figcaption>
+                </figure>
+              </section>
+
+              <section>
+                <h2>Machine Learning with Convolution Neural Network</h2>
+                <div style="float: left; width: 50%;">
+                  <figure>
+                    <img style = "border:0;" src="images/cats.png" width="100%">
+                  </figure>
+                </div>
+                <div style="float: right; width: 50%;">
+                  <figure>
+                    <img style = "border:0;" src="images/dogs.png" width="90%">
+                  </figure>
+                </div>
+              </section>
+
+              <section>
+                <h2>Machine Learning with CNN</h2>
+                <figure>
+                  <img style = "border:0;" src="images/cat-dog-musk.png" width="100%">
+                  <figcaption></figcaption>
+                </figure>
+              </section>
+
+              <section>
+                <h2>Machine Learning with CNN</h2>
+                <figure>
+                  <img style = "border:0;" src="images/cnn.jpeg" width="100%">
+                  <figcaption></figcaption>
+                </figure>
+              </section>
+              
+              <section>
+                <h2>Machine Learning with CNN</h2>
+                <figure>
+                  <img style = "border:0;" src="images/cnn-stride.gif" width="50%">
+                  <figcaption></figcaption>
+                </figure>
+              </section>
+              
+              <section>
+                <h2>Machine Learning with CNN</h2>
+                <figure>
+                  <img style = "border:0;" src="images/cat-dog-musk.png" width="100%">
+                  <figcaption></figcaption>
+                </figure>
+              </section>
+
+              <section>
+                <h2>CNN Full Waveform Inversion: Architecture</h2>
+                <figure>
+                  <img style = "border:0;" src="images/cnn-fwi-arch.png" width="100%">
+                  <figcaption>Vantassel et al., (2021)</figcaption>
+                </figure>
+              </section>
+
+              <section>
+                <h2>CNN Full Waveform Inversion: Training</h2>
+                <figure>
+                  <img style = "border:0;" src="images/cnn-fwi-input.png" width="100%">
+                </figure>
+              </section>
+
+              <section>
+                <h2>CNN Full Waveform Inversion</h2>
+                <figure>
+                  <img style = "border:0;" src="images/cnn-fwi.png" width="60%">
+                  <figcaption>CNN prediction of subsoil profile</figcaption>
+                </figure>
+              </section>
+
+              <section>
+                <h2>Learning to Simulate</h2>
+                <div style="float: left; width: 50%;">
+                  <video width="70%"  controls loop muted>
+                    <source src="media/sand-3d.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div style="float: right; width: 50%;">
+                  <video width="70%"  controls loop muted>
+                    <source src="media/sandramps.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                </div>
+              </section>
+
+            </section>
+
+            <section>
+              <!--Modelling soil is out of this world! -->
+              <section>
+                <h2>Modelling soil is out of this world!</h2>
+                <figure>
+                  <img style = "border:0; box-shadow: 0 0 0px;" src="images/martian-soil.jpg" width="55%">
+                </figure>
+                <p>Behaviour of martian soil</p>
+              </section>
+
+              <section>
+                <h2>Modelling soil is out of this world!</h2>
+                <figure>
+                  <video width="70%"  controls loop muted>
+                    <source src="media/zero-g-testing.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                  </video>
+                  <figcaption>source: Zero-G testing
+                    <br/> <a href="https://www.youtube.com/watch?v=JHvejtY2fGA">CalTech</a></figcaption>
+                </figure>
+              </section>
+            </section>
+
+            <section>
+              <!-- Summary -->
+              <section>
+                <h2>Building the cities of the future!</h2>
+                <div style="float: left; width: 45%;">
+                  <figure>
+	            <img style = "border:0; box-shadow: 0 0 0px;" src="images/future-cities.jpg" width="100%">
+	            <figcaption style="text-align:center;font-size: 60%;">Sustainable future cities<br/>
+	            </figcaption>
+                  </figure>
+                </div>
+	        <div style="float: right; width: 48%;">
+                  <figure>
+	            <img style = "border:0; box-shadow: 0 0 0px;" src="images/martian-colony.jpg" width="100%">
+	            <figcaption style="text-align:center;font-size: 60%;">Martian colony<br/>
+	            </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+               <!-- Thank you! -->
+               <section  data-background="images/themes/cb-geo-banner.png" data-background-size="100%" data-background-opacity="50%">
+                  <br/>
+                  <h1><font color="yellow">Thank you!</font></h1>
+                  <br/><br/>
+                  <h2>
+                     <font color="white">
+                     Krishna Kumar
+                     </font>
+                  </h2>
+                  <h3>
+                     <font color="white">
+                       krishnak@utexas.edu
+                     </font>
+                  </h3>
+               </section>
+            </section>
+            <!-- Special thanks to Chitra atthai! -->
+         </div>
+      </div>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.js"></script>
+      <script>
+         // More info https://github.com/hakimel/reveal.js#configuration
+         Reveal.initialize({
+             history: true,
+             slideNumber: 'c/t',
+             // More info https://github.com/hakimel/reveal.js#dependencies
+             dependencies: [{
+                 src: 'plugin/markdown/marked.js'
+             }, {
+                 src: 'plugin/markdown/markdown.js'
+             }, {
+                 src: 'plugin/notes/notes.js',
+                 async: true
+             }, {
+                 src: 'plugin/highlight/highlight.js',
+                 async: true,
+                 callback: function() {
+                     hljs.initHighlightingOnLoad();
+                 }
+             }]
+         });
+      </script>
+   </body>
+</html>
