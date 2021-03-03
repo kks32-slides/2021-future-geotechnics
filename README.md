@@ -1,8 +1,8 @@
-# Building cities of the future
+# A sneak-preview into the future of geotechnics
 
-> Krishna Kumar (2018), University of Cambridge / UT Austin
+> Krishna Kumar (2021), UT Austin
 
-[https://kks32-slides.github.io/2018-future-cities/#/](https://kks32-slides.github.io/2018-future-cities/#/)
+[https://kks32-slides.github.io/2021-future-geotechnics/#/](https://kks32-slides.github.io/2021-future-geotechnics/#/)
 
 [![License](https://img.shields.io/badge/license-cc--by--4.0-brightgreen.svg)](https://creativecommons.org/licenses/by/4.0/)
 
